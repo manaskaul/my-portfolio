@@ -6,7 +6,7 @@ export default function MainContent() {
     <div className="main-content">
       <div className="profile-pic"></div>
       <img
-        src="/assets/images/IMG_1423.jpeg"
+        src="./assets/images/IMG_1423.jpeg"
         alt="email"
         className="profile-pic-new"
       />
