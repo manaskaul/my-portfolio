@@ -1,0 +1,52 @@
+.nav-bar {
+  .navigation {
+    padding: 16px;
+    border-bottom: 1px solid rgba(2, 23, 53, 0.1);
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .left-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 16px;
+
+      .name {
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .designation {
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    .left-nav > p {
+      margin: 0;
+    }
+
+    .end-nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    .end-nav > a {
+      text-decoration: none;
+    }
+
+    .navLinks > div {
+      cursor: pointer;
+    }
+  }
+
+  .navigation > a {
+    cursor: pointer;
+    color: #006adc;
+  }
+}
