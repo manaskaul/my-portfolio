@@ -1,12 +1,12 @@
 import "./App.css";
-import Header from "./components/header/Header";
+import NavBar from "./components/nav-bar/NavBar";
 import HomePage from "./components/home-page/HomePage";
 import Resume from "./components/resume/Resume";
 
 function App() {
   return (
     <div className="main-page">
-      <Header />
+      <NavBar />
       <HomePage />
       {/* <Resume /> */}
     </div>

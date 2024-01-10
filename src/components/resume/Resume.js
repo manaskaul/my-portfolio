@@ -1,66 +1,114 @@
 import React from "react";
+import resume from "../../resume.json";
 import "./Resume.css";
 
-export function LeftNav() {
+export function LeftNav({ resume }) {
+  let leftNavLinks = ["Manas Kaul"];
+  resume.sections.forEach((resumeSection) => {
+    leftNavLinks.push(resumeSection.title);
+  });
+
+  const leftNavLinksList = leftNavLinks.map((linkText, idx) => (
+    <li key={idx}>{linkText}</li>
+  ));
+
   return (
-    <nav
-      style={{
-        float: "left",
-        width: "30%",
-        height: "100%",
-        background: "#ccc",
-        padding: "20px",
-      }}
-    >
-      <ul>
-        <li>Manas Kaul</li>
-        <li>Experience</li>
-        <li>Projects</li>
-        <li>Education</li>
-        <li>Skills</li>
+    <div className="left-nav">
+      <ul
+        style={{
+          marginTop: "40px",
+        }}
+      >
+        {leftNavLinksList}
       </ul>
-    </nav>
+    </div>
   );
 }
 
-export function RightContent() {
+export function RightContent({ resume }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-      }}
-    >
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-        laudantium necessitatibus assumenda ratione ab temporibus dolores
-        consequatur, officiis possimus minima distinctio, vel, minus quam
-        pariatur?
-      </section>
-      <br />
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-        laudantium necessitatibus assumenda ratione ab temporibus dolores
-        consequatur, officiis possimus minima distinctio, vel, minus quam
-        pariatur?
-      </section>
-      <br />
-      <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-        laudantium necessitatibus assumenda ratione ab temporibus dolores
-        consequatur, officiis possimus minima distinctio, vel, minus quam
-        pariatur?
-      </section>
+    <div className="right-content">
+      <Header resume={resume} />
+      <Section resume={resume} />
     </div>
   );
+}
+
+export function Header({ resume }) {
+  return (
+    <div>
+      <p
+        style={{
+          fontSize: "25px",
+          fontWeight: "bold",
+        }}
+      >
+        {resume.designation}
+      </p>
+      <p>{resume.description}</p>
+    </div>
+  );
+}
+
+export function Section({ resume }) {
+  let allResume = resume.sections.map((resumeSection, idx) => {
+    let subSections = resumeSection.subsection.map((subSec, idx) => {
+      let subSectionDesc = subSec.description.map((desc, idx) => {
+        return (
+          <>
+            <li key={idx}>{desc}</li>
+          </>
+        );
+      });
+
+      return (
+        <div
+          style={{
+            marginLeft: "25px",
+          }}
+        >
+          <span>
+            <span
+              style={{
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              {subSec.heading}
+            </span>{" "}
+            | <span>{subSec.subHeading1}</span>
+          </span>
+          <div>{subSec.subHeading2}</div>
+
+          <ul>{subSectionDesc}</ul>
+        </div>
+      );
+    });
+
+    return (
+      <div>
+        <div
+          style={{
+            fontSize: "20px",
+            fontWeight: "bold",
+            marginBottom: "12px",
+          }}
+        >
+          {resumeSection.title}
+        </div>
+        {subSections}
+        <br />
+      </div>
+    );
+  });
+  return <>{allResume}</>;
 }
 
 export default function Resume() {
   return (
     <div className="resume">
-      <LeftNav />
-      <RightContent />
+      <LeftNav resume={resume} />
+      <RightContent resume={resume} />
     </div>
   );
 }

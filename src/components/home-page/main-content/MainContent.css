@@ -19,7 +19,7 @@
   .profile-text {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 360px;
     gap: 16px;
 
     .name {
@@ -33,6 +33,7 @@
 
     .sub-heading {
       font-size: 1.25rem;
+      text-align: justify;
     }
   }
 }

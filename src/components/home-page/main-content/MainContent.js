@@ -14,10 +14,11 @@ export default function MainContent() {
         <div className="name">Manas Kaul</div>
         <div className="heading">A Bit About Me</div>
         <div className="sub-heading">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum
-          deserunt repudiandae hic eius, recusandae incidunt vitae ab aliquam
-          aspernatur dicta error aut cum veritatis voluptas expedita aperiam
-          nobis totam minima!
+          I'm a passionate and results-driven Full Stack Engineer with expertise
+          in building dynamic web applications using Angular and TypeScript and
+          robust and reliable backend systems using Java. I thrive on turning
+          ideas into reality and creating user-friendly experiences that leave a
+          lasting impact.
         </div>
       </div>
     </div>

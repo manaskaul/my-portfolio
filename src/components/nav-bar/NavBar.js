@@ -1,7 +1,7 @@
 import React from "react";
-import "./Header.css";
+import "./NavBar.css";
 
-export default function Header() {
+export default function NavBar() {
   return (
     <div className="nav-bar">
       <div className="navigation">
@@ -10,9 +10,9 @@ export default function Header() {
           <p className="designation">Full Stack Developer</p>
         </div>
         <div className="end-nav">
-          <a href="">Resume</a>
+          <a href="/">Resume</a>
           <div className="seperator"></div>
-          <a href="">Personal</a>
+          <a href="/">Personal</a>
         </div>
       </div>
     </div>
