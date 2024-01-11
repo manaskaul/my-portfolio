@@ -25,6 +25,7 @@ export function LeftNav({ resume }) {
           marginTop: "40px",
           display: "flex",
           flexDirection: "column",
+          padding: "0",
         }}
       >
         {leftNavLinksList}
