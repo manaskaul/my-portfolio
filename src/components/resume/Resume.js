@@ -8,15 +8,23 @@ export function LeftNav({ resume }) {
     leftNavLinks.push(resumeSection.title);
   });
 
-  const leftNavLinksList = leftNavLinks.map((linkText, idx) => (
-    <li key={idx}>{linkText}</li>
-  ));
+  const leftNavLinksList = leftNavLinks.map((linkText, idx) => {
+    const scrollPos = `#${linkText}`;
+
+    return (
+      <a href={scrollPos} key={idx}>
+        {linkText}
+      </a>
+    );
+  });
 
   return (
     <div className="left-nav">
       <ul
         style={{
           marginTop: "40px",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         {leftNavLinksList}
@@ -36,7 +44,7 @@ export function RightContent({ resume }) {
 
 export function Header({ resume }) {
   return (
-    <div>
+    <div id="Manas Kaul">
       <p
         style={{
           fontSize: "25px",
@@ -66,6 +74,7 @@ export function Section({ resume }) {
           style={{
             marginLeft: "25px",
           }}
+          key={idx}
         >
           <span>
             <span
@@ -86,7 +95,7 @@ export function Section({ resume }) {
     });
 
     return (
-      <div>
+      <div key={idx} id={resumeSection.title}>
         <div
           style={{
             fontSize: "20px",
