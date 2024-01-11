@@ -1,6 +1,8 @@
 .nav-bar {
-  position: fixed;
-  width: var(--max-width);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: var(--max-width);
   background-color: hsla(0, 0%, 100%, 0.7);
   backdrop-filter: blur(5px);
 

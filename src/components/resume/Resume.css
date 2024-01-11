@@ -3,7 +3,7 @@
   flex-direction: row;
   width: 1000px;
   align-self: center;
-  padding-top: 80px;
+  /* padding-top: 80px; */
   text-align: justify;
 
   .left-nav {

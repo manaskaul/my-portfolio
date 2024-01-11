@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./components/nav-bar/NavBar";
 import HomePage from "./components/home-page/HomePage";
 import Resume from "./components/resume/Resume";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (

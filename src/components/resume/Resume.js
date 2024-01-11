@@ -63,9 +63,9 @@ export function Section({ resume }) {
     let subSections = resumeSection.subsection.map((subSec, idx) => {
       let subSectionDesc = subSec.description.map((desc, idx) => {
         return (
-          <>
-            <li key={idx}>{desc}</li>
-          </>
+          <div key={idx}>
+            <li>{desc}</li>
+          </div>
         );
       });
 
@@ -88,7 +88,6 @@ export function Section({ resume }) {
             | <span>{subSec.subHeading1}</span>
           </span>
           <div>{subSec.subHeading2}</div>
-
           <ul>{subSectionDesc}</ul>
         </div>
       );
